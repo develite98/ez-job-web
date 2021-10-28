@@ -1,0 +1,33 @@
+<div class="company-indicator" *ngIf="company">
+    <div class="company-indicator__job-name">
+        {{ company.jobTitle }}
+    </div>
+
+    <div class="company-indicator__name">
+        {{ company.companyName }}
+    </div>
+
+    <div class="company-indicator__update-at">
+        {{ company.updateAt }}
+    </div>
+
+    <div class="company-indicator__action">
+        <i  style="background-color: #fbeaf2;"
+            nz-icon
+            nzType="linkedin"
+            nzTooltipTitle="Search on linkedIn"
+            nzTooltipPlacement="bottom"
+            nz-tooltip
+            (click)="searchLinkedLn()"
+            nzTheme="outline"></i>
+
+        <i  style="background-color: #b3fefe;"
+            nz-icon
+            nzType="google"
+            nzTooltipTitle="Search on Google"
+            nzTooltipPlacement="bottom"
+            nz-tooltip
+            nzTheme="outline"
+            (click)="searchGoogle()"></i>
+    </div>
+</div>

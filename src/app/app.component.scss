@@ -1,0 +1,143 @@
+.main-layout {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    &__header {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0px 20px;
+    }
+
+    &__search {
+        height: calc(70% - 50px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #9BE7FF;
+        flex-direction: column;
+        position: relative;
+        transition: all 0.4s ease-in;
+
+        &.--isSearch {
+            height: calc(25% - 50px);
+        }
+    }
+
+    &__result {
+        height: 30%;
+        overflow: auto;
+        background-color: rgb(251,234,242);
+        transition: all 0.4s ease-in;
+
+        &.--isSearch {
+            height: calc(75%);
+        }
+
+        nz-empty {
+            margin-top: 5%;
+        }
+    }
+
+    &__spin {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+}
+
+.search-web {
+    position: absolute;
+    bottom: -20px;
+    display: flex;
+    transition: all 0.4s ease-in;
+
+    &__tab-header {
+        font-size: 20px;
+        font-weight: 600;
+        background-color: #fff;
+        padding: 5px 15px;
+        border-radius: 2rem;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        margin-right: 15px;
+        cursor: pointer;
+        opacity: 0.5;
+        z-index: 100;
+
+        &.--active {
+            opacity: 1;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.search-job-input {
+    > input {
+        width: 350px;
+        height: 60px;
+        border-radius: 50px;
+        padding: 0px 25px;
+        font-size: 20px;
+        margin-right: 10px;
+
+        &::placeholder {
+            color: black;
+            opacity: 0.7;
+        }
+    }
+    
+    > button {
+        width: 60px;
+        height: 60px;
+        background-color: rgb(251,234,242);
+        border: unset;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        > i {
+            font-size: 25px;
+            color: #111;
+        }
+    }
+}
+
+.search-suggestions {
+    margin-top: 20px;
+
+    nz-tag {
+        cursor: pointer;
+        font-size: 20px;
+        padding: 5px;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.search-result {
+    border-radius: 10px;
+    padding: 100px 30px;
+    
+    &__title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-left: 25px;
+        color: rgba(0 , 0 , 0 , 0.5);
+        text-transform: uppercase;
+    }
+}
